@@ -40,7 +40,9 @@ jobs:
       - run:
           name: upload to pypi
           command: |
-            pip install --user --upgrade twine
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install twine
             twine upload dist/*
 workflows:
   version: 2
