@@ -1,11 +1,32 @@
-import setuptools
+import os
+import sys
+
+from setuptools import setup
+from setuptools.command.install import install
+
+VERSION = "1.0.0"
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-setuptools.setup(
+
+class VerifyVersionCommand(install):
+    """Custom command to verify that the git tag matches our version"""
+    description = 'verify that the git tag matches our version'
+
+    def run(self):
+        tag = os.getenv('CIRCLE_TAG')
+
+        if tag != VERSION:
+            sys.exit(
+                "Git tag: %s does not match the version of this app: %s" %
+                (tag, VERSION)
+            )
+
+
+setup(
     name="pyliturgical",
-    version="1.0.0",
+    version=VERSION,
     author="Ian Turner",
     author_email="ian@pizen.io",
     description="Package for generating liturgial information for a date",
@@ -31,4 +52,7 @@ setuptools.setup(
         "Intended Audience :: Developers",
         "Topic :: Religion"
     ],
+    cmdclass={
+        'verify': VerifyVersionCommand,
+    }
 )
