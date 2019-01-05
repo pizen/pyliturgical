@@ -40,7 +40,7 @@ jobs:
       - run:
           name: upload to pypi
           command: |
-            pip install twine
+            pip install --user --upgrade twine
             twine upload dist/*
 workflows:
   version: 2
