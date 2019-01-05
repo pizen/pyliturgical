@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.7.2
+    steps:
+      - checkout
+      - run:
+          name: build source distribution
+          command: |
+            python setup.py sdist
+      - run:
+          name: build wheel
+          command: |
+            python setup.py bdist_wheel
+  test:
+    docker:
+      - image: circleci/python:3.7.2
+    steps:
+      - checkout
+      - run:
+          name: run tests
+          command: |
+            mkdir test-reports
+            python setup.py test --addopts "--junitxml=test-reports/junit.xml"
+      - store_test_results:
+          path: test-reports
+      - store_artifacts:
+          path: test-reports
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
