@@ -5,7 +5,7 @@ from dateutil.relativedelta import relativedelta
 
 ADVENT = 'Advent'
 CHRISTMAS_DAY = 'Christmas Day'
-CHRISTMAS = 'Christmas'
+CHRISTMAS = 'Christmas Season'
 EPIPHANY = 'Epiphany'
 BAPTISM_OF_THE_LORD = 'Baptism of the Lord'
 TRANSFIGURATION = 'Transfiguration Sunday'
@@ -15,7 +15,7 @@ MAUNDAY_THURSDAY = 'Maunday Thursday'
 GOOD_FRIDAY = 'Good Friday'
 HOLY_SATURDAY = 'Holy Saturday'
 EASTER_SUNDAY = 'Easter Sunday'
-EASTER = 'Easter'
+EASTER = 'Easter Season'
 PENTECOST = 'Pentecost'
 TRINITY_SUNDAY = 'Trinity Sunday'
 CHRIST_THE_KING = 'Christ the King'
@@ -76,7 +76,7 @@ class Calendar:
         self._add(GOOD_FRIDAY, e-timedelta(days=2))
         self._add(HOLY_SATURDAY, e-timedelta(days=1))
         self._add(EASTER_SUNDAY, e)
-        self._add(EASTER, e+timedelta(days=1))
+        self._add(EASTER, e+timedelta(days=1), e+timedelta(days=48))
         self._add(PENTECOST, e+timedelta(days=49))
         self._add(TRINITY_SUNDAY, e+timedelta(days=56))
         self._add(CHRIST_THE_KING, c-timedelta(days=(28+c.weekday()+1)))

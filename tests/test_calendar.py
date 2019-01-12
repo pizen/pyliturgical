@@ -17,6 +17,7 @@ CAL_2017 = {
     calendar.HOLY_SATURDAY: date(2017, 4, 15),
     calendar.EASTER_SUNDAY: date(2017, 4, 16),
     calendar.EASTER: date(2017, 4, 17),
+    calendar.EASTER: date(2017, 6, 3),
     calendar.PENTECOST: date(2017, 6, 4),
     calendar.TRINITY_SUNDAY: date(2017, 6, 11),
     calendar.CHRIST_THE_KING: date(2017, 11, 26)
@@ -35,6 +36,7 @@ CAL_2018 = {
     calendar.HOLY_SATURDAY: date(2018, 3, 31),
     calendar.EASTER_SUNDAY: date(2018, 4, 1),
     calendar.EASTER: date(2018, 4, 2),
+    calendar.EASTER: date(2018, 5, 19),
     calendar.PENTECOST: date(2018, 5, 20),
     calendar.TRINITY_SUNDAY: date(2018, 5, 27),
     calendar.CHRIST_THE_KING: date(2018, 11, 25)
@@ -53,6 +55,7 @@ CAL_2019 = {
     calendar.HOLY_SATURDAY: date(2019, 4, 20),
     calendar.EASTER_SUNDAY: date(2019, 4, 21),
     calendar.EASTER: date(2019, 4, 22),
+    calendar.EASTER: date(2019, 6, 8),
     calendar.PENTECOST: date(2019, 6, 9),
     calendar.TRINITY_SUNDAY: date(2019, 6, 16),
     calendar.CHRIST_THE_KING: date(2019, 11, 24)
