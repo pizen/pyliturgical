@@ -41,7 +41,6 @@ setup(
         'python-dateutil'
     ],
     tests_require=[
-        'coverage',
         'pytest'
     ],
     classifiers=[

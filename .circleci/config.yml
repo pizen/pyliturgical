@@ -9,6 +9,7 @@ jobs:
           name: run tests
           command: |
             mkdir test-reports
+            pip install coverage
             coverage run --source "pyliturgical" setup.py test --addopts "--junitxml=test-reports/junit.xml"
             coverage report
             coverage xml -o test-reports/coverage.xml
